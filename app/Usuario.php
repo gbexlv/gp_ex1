@@ -26,4 +26,9 @@ class Usuario extends Authenticatable
     {
     	return $this->hasMany('App\Favorito', 'codigousuariofavorito', 'codigousuario');
     }
+    
+    public function pagos()
+    {
+    	return $this->belongsToMany('App\Pago', 'usuariospagos');
+    }
 }
