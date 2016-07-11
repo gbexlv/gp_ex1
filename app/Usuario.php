@@ -21,4 +21,9 @@ class Usuario extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    
+    public function favoritos()
+    {
+    	return $this->hasMany('App\Favorito', 'codigousuariofavorito', 'codigousuario');
+    }
 }
